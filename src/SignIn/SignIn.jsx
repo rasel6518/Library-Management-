@@ -1,12 +1,83 @@
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { FaGoogle } from 'react-icons/fa';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const SignIn = () => {
+
+    const { signIn, googleLogin } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate()
+
+
+    const handleGoogleSignIn = () => {
+        googleLogin()
+            .then(result => {
+
+                console.log(result);
+
+
+                navigate(location?.state ? location.state : '/')
+                toast.success(' Google Signin  Successful');
+            })
+            .catch(err => {
+                console.log(err);
+
+            })
+
+
+    }
+
+    const handleSignin = e => {
+        e.preventDefault()
+        console.log(e.currentTarget);
+        const form = new FormData(e.currentTarget)
+        const email = form.get('email')
+        const password = form.get('password')
+        console.log(email, password)
+
+        signIn(email, password)
+            .then(result => {
+
+                console.log(result);
+                navigate(location?.state ? location.state : '/')
+                toast.success('Signin  Successful');
+
+
+
+            })
+            .catch(err => {
+
+                const errorCode = err.code;
+
+                if (errorCode === 'auth/wrong-password') {
+                    toast.error('Password is incorrect. Please try again.')
+
+                } else if (errorCode === 'auth/user-not-found') {
+                    toast.error('No user found with this email. Please check your email and try again.')
+
+                } else if (errorCode === 'auth/invalid-Signin-credentials') {
+                    toast.error('Invalid Signin information')
+
+                }
+
+                else {
+                    toast.error('Signin failed. Please try again.')
+                }
+            })
+        e.currentTarget.reset()
+
+    }
+
     return (
         <div>
 
             <div>
 
-                <div className="hero min-h-screen bg-secColor">
+                <div className="hero min-h-screen bg-gradient-to-t from-[#77B748] to-[#60e508]">
 
                     <div className="hero-content w-full ">
 
@@ -24,14 +95,14 @@ const SignIn = () => {
 
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn hover:bg-thirColor  bg-priColor text-white">Signin</button>
+                                    <button className="btn hover:bg-[#71AE44]  bg-[#77B748] text-white">Signin</button>
                                 </div>
                             </form>
 
                             <p className="text-center  font-bold mb-5">OR </p>
 
                             <div className=" form-control text-center px-9 ">
-                                <button onClick={handleGoogleSignIn} className="btn bg-priColor text-white hover:bg-thirColor "><FaGoogle></FaGoogle> Login With Google</button>
+                                <button onClick={handleGoogleSignIn} className="btn  text-white hover:bg-[#71AE44]  bg-[#77B748] "><FaGoogle></FaGoogle> Login With Google</button>
                             </div>
 
 
@@ -46,7 +117,7 @@ const SignIn = () => {
             </div>
 
 
-            {/* <ToastContainer position="top-center"
+            <ToastContainer position="top-center"
                 autoClose={5000}
                 hideProgressBar={false}
                 newestOnTop={false}
@@ -57,7 +128,7 @@ const SignIn = () => {
                 pauseOnHover
                 theme="light">
 
-            </ToastContainer> */}
+            </ToastContainer>
         </div>
     );
 };

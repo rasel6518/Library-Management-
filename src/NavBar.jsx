@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import logo from '../src/assets/logo.png'
 import { AiOutlineCloseCircle, AiOutlineMenu } from 'react-icons/ai';
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "./AuthProvider/AuthProvider";
 
 
 
 const Navbar = () => {
 
-
-    // const handleSignOut = () => {
-    //     LogOut()
-    //         .then()
-    //         .catch()
-    // }
+    const { user, LogOut } = useContext(AuthContext)
+    const handleSignOut = () => {
+        LogOut()
+            .then()
+            .catch()
+    }
 
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
 
@@ -76,19 +77,19 @@ const Navbar = () => {
 
                     <div className="flex items-center gap-3">
 
-                        {/* {
+                        {
                             user ? <ul>
                                 {user.displayName && user.photoURL ? <span className="">
                                     <div className="flex items-center gap-1 ">
-                                        <p className="text-sm font-medium  text-slate-600 ">{user.displayName}</p>
+                                        <p className="text-sm font-medium  text-white ">{user.displayName}</p>
                                         <img src={user.photoURL} className="w-[40px] h-[40px] rounded-full mb-4" alt="" />
                                     </div>
                                 </span> : ''}
-                            </ul> : ''} */}
-                        {/* 
+                            </ul> : ''}
+
                         {
                             user ? <Link to='/signin' onClick={handleSignOut} className="btn hover:bg-btn-bg   text-white bg-[#77B748]  ">SIGN OUT</Link> : <Link to='/signin' className="btn hover:bg-btn-bg  text-white bg-[#77B748]  ml-14 ">Sign In</Link>
-                        } */}
+                        }
 
                         <input type="checkbox" onChange={handletoggle}
 
