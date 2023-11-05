@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "categoryName": "Novel",
+        "image": "https://i.ibb.co/GCvJPX3/rain-bennett-7-Nir5-XIRVM-unsplash.jpg",
+        "buttonText": "Explore Novels"
+    },
+    {
+        "id": 2,
+        "categoryName": "Thriller",
+        "image": "https://i.ibb.co/nmvVnF8/laura-chouette-4-Pl-TCPj-VT48-unsplash.jpg",
+        "buttonText": "Explore Thrillers"
+    },
+    {
+        "id": 3,
+        "categoryName": "History",
+        "image": "https://i.ibb.co/MGcSY3F/sincerely-media-5zs-Ixp-Ad91-E-unsplash.jpg",
+        "buttonText": "Explore History Books"
+    },
+    {
+        "id": 4,
+        "categoryName": "Drama",
+        "image": "https://i.ibb.co/Vwwf20G/sincerely-media-iwx5-Pn6u-Z-A-unsplash.jpg",
+        "buttonText": "Explore Dramas"
+    }
+]
