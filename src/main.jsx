@@ -10,6 +10,7 @@ import {
 import Root from './Root';
 import Home from './Components/Home/Home';
 import ErrorPage from './ErrorPage/ErrorPage';
+import SignIn from './SignIn/SignIn';
 
 
 
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () => fetch('books.json')
+      },
+      {
+        path: "signin",
+        element: <SignIn></SignIn>,
+
       },
 
 
