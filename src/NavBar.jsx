@@ -51,12 +51,12 @@ const Navbar = () => {
         }
 
         >All Books</NavLink></li>
-        <li><NavLink to='/mycart' className={({ isActive, isPending }) =>
+        <li><NavLink to='/borrowbook' className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "active btn  text-white hover:bg-[#71AE44] bg-[#71AE44] mr-5 text-lg font-medium" : " mr-5 text-lg hover:bg-[#71AE44] px-6 py-3 rounded-lg text-white font-medium"
         }
 
         >Borrowed Books</NavLink></li>
-        <li><NavLink to='/addproduct' className={({ isActive, isPending }) =>
+        <li><NavLink to='/addbook' className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "active btn  text-white hover:bg-[#71AE44] bg-[#71AE44] mr-5 text-lg font-medium" : " mr-5 text-lg hover:bg-[#71AE44] px-6 py-3 rounded-lg text-white font-medium"
         }
 

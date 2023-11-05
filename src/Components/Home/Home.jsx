@@ -15,19 +15,29 @@ const Home = () => {
             <div className="grid md:grid-cols-2  my-10 gap-5  ">
                 {
                     books?.map(book =>
-                    (<div key={book.id}>
+                    (
 
-                        <Link>
-                            {/*  to={`/${book.name.toLowerCase()}`} */}
-                            <div className="w-full  h-52 m-5 flex flex-col items-center">
-                                <img className="w-full  h-5/6  " src={book.image} alt="" />
-                                <p className="text-center font-serif font-extrabold text-3xl">{book.categoryName}</p>
-                                <button className="btn hover:bg-green-500 text-white bg-[#71AE44]">Explore</button>
-                            </div>
+                        <div key={book.id} className="relative group overflow-hidden">
+                            <Link to={`/${book.categoryName.toLowerCase()}`}>
+                                <div className="w-full h-52 m-5 relative">
+                                    <img className="w-full h-full" src={book.image} alt="" />
 
-                        </Link>
+                                    <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="overlay absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
 
-                    </div>)
+                                        <button className="btn absolute hover:bg-green-500 text-white bg-[#71AE44] mt-4">Explore</button>
+                                    </div>
+
+                                </div>
+                                <p className="text-center font-serif font-extrabold text-3xl text-black  ">
+                                    {book.categoryName}
+                                </p>
+
+                            </Link>
+                        </div>
+
+
+                    )
 
                     )
                 }
@@ -40,3 +50,5 @@ const Home = () => {
 };
 
 export default Home;
+
+// 
