@@ -47,17 +47,17 @@ const Navbar = () => {
         >Home</NavLink></li>
 
         <li><NavLink to='/allbooks' className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active btn  text-white hover:bg-[#71AE44] bg-[#71AE44] mr-5 text-lg font-medium" : " mr-5 text-lg hover:bg-[#71AE44] px-6 py-3 rounded-lg text-white font-medium"
+            isPending ? "pending" : isActive ? "active btn  text-white hover:bg-[#71AE44] bg-[#71AE44] mr-2 text-base md:mr-5 md:text-lg font-medium" : "   mr-2 text-base md:mr-5 md:text-lg hover:bg-[#71AE44] px-6 py-3 rounded-lg text-white font-medium"
         }
 
         >All Books</NavLink></li>
         <li><NavLink to='/borrowbook' className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active btn  text-white hover:bg-[#71AE44] bg-[#71AE44] mr-5 text-lg font-medium" : " mr-5 text-lg hover:bg-[#71AE44] px-6 py-3 rounded-lg text-white font-medium"
+            isPending ? "pending" : isActive ? "active btn  text-white hover:bg-[#71AE44] bg-[#71AE44] mr-2 text-base md:mr-5 md:text-lg font-medium" : "   mr-2 text-base md:mr-5 md:text-lg hover:bg-[#71AE44] px-6 py-3 rounded-lg text-white font-medium"
         }
 
         >Borrowed Books</NavLink></li>
         <li><NavLink to='/addbook' className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active btn  text-white hover:bg-[#71AE44] bg-[#71AE44] mr-5 text-lg font-medium" : " mr-5 text-lg hover:bg-[#71AE44] px-6 py-3 rounded-lg text-white font-medium"
+            isPending ? "pending" : isActive ? "active btn  text-white hover:bg-[#71AE44] bg-[#71AE44] mr-2 text-base md:mr-5 md:text-lg font-medium" : "   mr-2 text-base md:mr-5 md:text-lg hover:bg-[#71AE44] px-6 py-3 rounded-lg text-white font-medium"
         }
 
         >Add Book</NavLink></li>
@@ -113,7 +113,7 @@ const Navbar = () => {
 
 
 
-                    <ul className={` hidden absolute top-1/2 left-1/2 transform   -translate-y-1/2  -translate-x-1/2 md:flex md:mx-auto md:items-center md:w-auto md:space-x-6 ${isMenuOpen ? '' : ' hidden'}`}>
+                    <ul className={` hidden absolute top-1/2 left-1/2 transform   -translate-y-1/2  -translate-x-1/2 md:flex md:mx-auto md:items-center md:w-auto md:space-x-5 ${isMenuOpen ? '' : ' hidden'}`}>
                         {navlinks}
                     </ul>
 

@@ -16,31 +16,33 @@ const AddBook = () => {
 
         const newBook = { name, author, category, description, image, rating, quantity };
         console.log(newBook);
-        // fetch('https://brands-prouduct-server.vercel.app/brands', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newProduct)
+        fetch('http://localhost:5000/books', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newBook)
 
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.insertedId) {
-        //             Swal.fire({
-        //                 title: 'Added New Book ',
-        //                 showClass: {
-        //                     popup: 'animate__animated animate__fadeInDown'
-        //                 },
-        //                 hideClass: {
-        //                     popup: 'animate__animated animate__fadeOutUp'
-        //                 }
-        //             })
-        //         }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Added New Book ',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    })
+                }
 
-        //     })
 
+
+            })
+        form.reset()
 
     }
 

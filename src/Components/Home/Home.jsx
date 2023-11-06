@@ -1,5 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Banner from "./Banner";
+import PopularAuthor from "./PopularAuthor";
+import NewBook from "./NewBook";
 
 
 
@@ -17,7 +19,7 @@ const Home = () => {
                     books?.map(book =>
                     (
 
-                        <div key={book.id} className="relative group overflow-hidden">
+                        <div key={book._id} className="relative group overflow-hidden">
                             <Link to={`/${book.categoryName.toLowerCase()}`}>
                                 <div className="w-full h-52 m-5 relative">
                                     <img className="w-full h-full" src={book.image} alt="" />
@@ -42,6 +44,10 @@ const Home = () => {
                     )
                 }
             </div>
+
+            <NewBook></NewBook>
+
+            <PopularAuthor></PopularAuthor>
 
 
 
