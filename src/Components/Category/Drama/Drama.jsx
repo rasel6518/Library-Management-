@@ -39,7 +39,7 @@ const Drama = () => {
                                     activeColor="#ffd700"
                                 /></div>
 
-                                <Link>
+                                <Link to={`/detailbook/${book._id}`}>
                                     <button className="bg-btn-bg rounded-md text-white px-5 py-3">Details button
                                     </button>
                                 </Link>

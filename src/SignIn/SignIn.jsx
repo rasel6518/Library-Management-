@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { FaGoogle } from 'react-icons/fa';
+import { FcGoogle } from 'react-icons/fc';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -87,22 +88,22 @@ const SignIn = () => {
                             <form onSubmit={handleSignin} className="card-body">
                                 <div className="form-control">
 
-                                    <input type="email" name="email" placeholder=" Enter Email" className="input input-bordered " required />
+                                    <input type="email" name="email" placeholder=" Enter Email" className="input  " style={{ borderBottom: '1px solid #77B748' }} required />
                                 </div>
                                 <div className="form-control">
 
-                                    <input type="password" name="password" placeholder="Enter Password" className="input input-bordered" required />
+                                    <input type="password" name="password" placeholder="Enter Password" className="input " style={{ borderBottom: '1px solid #77B748' }} required />
 
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn hover:bg-[#71AE44]  bg-[#77B748] text-white">Signin</button>
+                                    <button className="btn hover:bg-[#71AE44]  bg-[#77B748] text-white">Sign In</button>
                                 </div>
                             </form>
 
                             <p className="text-center  font-bold mb-5">OR </p>
 
                             <div className=" form-control text-center px-9 ">
-                                <button onClick={handleGoogleSignIn} className="btn  text-white hover:bg-[#71AE44]  bg-[#77B748] "><FaGoogle></FaGoogle> Login With Google</button>
+                                <button onClick={handleGoogleSignIn} className="text-4xl mx-auto hover:border-2 p-3 hover:border-btn-bg "><FcGoogle></FcGoogle> </button>
                             </div>
 
 

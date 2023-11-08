@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 const Banner = () => {
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 1000,
         slidesToShow: 1,
@@ -27,7 +27,7 @@ const Banner = () => {
         <div data-aos="fade-up"
 
             className="w-full" >
-            <Slider className=" mx-auto  h-[80vh] " {...settings}>
+            <Slider className=" mx-auto  " {...settings}>
 
                 {/* banner img */}
 

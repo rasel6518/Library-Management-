@@ -85,19 +85,19 @@ const SignUp = () => {
                             <form onSubmit={handleSignup} className="card-body">
                                 <div className="form-control">
 
-                                    <input type="text" name="name" placeholder="Enter your name" className="input input-bordered" required />
+                                    <input type="text" name="name" placeholder="Enter your name" className="input " style={{ borderBottom: '1px solid #77B748' }} required />
                                 </div>
                                 <div className="form-control">
 
-                                    <input type="text" name="photourl" placeholder="Enter Photo URL" className="input input-bordered" required />
+                                    <input type="text" name="photourl" placeholder="Enter Photo URL" className="input " style={{ borderBottom: '1px solid #77B748' }} required />
                                 </div>
                                 <div className="form-control">
 
-                                    <input type="email" name="email" placeholder="Enter Email" className="input input-bordered" required />
+                                    <input type="email" name="email" placeholder="Enter Email" className="input " style={{ borderBottom: '1px solid #77B748' }} required />
                                 </div>
                                 <div className="form-control">
 
-                                    <input type="password" name="password" placeholder="Enter Password" className="input input-bordered" required />
+                                    <input type="password" name="password" placeholder="Enter Password" className="input " style={{ borderBottom: '1px solid #77B748' }} required />
 
                                 </div>
                                 <div className="form-control mt-6">
@@ -105,7 +105,7 @@ const SignUp = () => {
                                 </div>
                             </form>
                             <div className=" mb-5 text-center p-3">
-                                Do  Have An Account ? <Link className="text-blue-400 hover:text-xl hover:font-bold font-medium" to='/signin'> Signin</Link>
+                                Do  Have An Account ? <Link className="text-blue-400  font-medium" to='/signin'> Signin</Link>
                             </div>
                         </div>
                     </div>

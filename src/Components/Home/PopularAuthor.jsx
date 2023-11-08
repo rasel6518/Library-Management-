@@ -5,7 +5,7 @@ const PopularAuthor = () => {
     const [authors, setauthors] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/authors')
+        fetch('https://online-library-server.vercel.app/authors')
             .then(res => res.json())
             .then(data => setauthors(data))
     }, [])

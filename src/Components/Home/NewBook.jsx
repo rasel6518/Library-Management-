@@ -13,7 +13,7 @@ const NewBook = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/newBooks')
+        fetch('https://online-library-server.vercel.app/newBooks')
             .then(res => res.json())
             .then(data => setnewBooks(data))
     }, [])

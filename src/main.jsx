@@ -20,6 +20,9 @@ import Novel from './Components/Category/Novel/Novel';
 import Thriller from './Components/Category/Thriller/Thriller';
 import History from './Components/Category/History/History';
 import Drama from './Components/Category/Drama/Drama';
+import DetailBook from './Components/DetailBook/DetailBook';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import UpdateDetails from './Components/UpdateDetails/UpdateDetails';
 
 
 
@@ -34,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/categories')
+        loader: () => fetch('https://online-library-server.vercel.app/categories')
       },
       {
         path: "signin",
@@ -48,17 +51,18 @@ const router = createBrowserRouter([
       },
       {
         path: "addbook",
-        element: <AddBook></AddBook>,
+        element: <PrivateRoute> <AddBook></AddBook></PrivateRoute>,
 
       },
       {
         path: "allbooks",
-        element: <AllBooks></AllBooks>,
+        element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>,
 
       },
       {
         path: "borrowbook",
-        element: <BorrowBook></BorrowBook>,
+        element: <PrivateRoute><BorrowBook></BorrowBook></PrivateRoute>,
+        loader: () => fetch("https://online-library-server.vercel.app/borrowbooks")
 
       },
       {
@@ -79,6 +83,18 @@ const router = createBrowserRouter([
       {
         path: "drama",
         element: <Drama></Drama>,
+
+      },
+      {
+        path: "detailbook/:id",
+        element: <PrivateRoute><DetailBook></DetailBook></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://online-library-server.vercel.app/books/${params.id}`)
+
+      },
+      {
+        path: "updatedetails/:id",
+        element: <PrivateRoute><UpdateDetails></UpdateDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://online-library-server.vercel.app/books/${params.id}`)
 
       },
 

@@ -1,5 +1,7 @@
 
 import logo from "../../assets/logo.png"
+import { AiFillFacebook, AiFillInstagram } from 'react-icons/ai';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
     return (
@@ -40,6 +42,20 @@ const Footer = () => {
                                 </li>
                                 <li>
                                     <a rel="noopener noreferrer" href="#">Terms of Service</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="space-y-3">
+                            <h3 className="tracki uppercase dark:text-gray-50"> Social Link </h3>
+                            <ul className="space-y-1 flex items-center gap-5 text-3xl">
+                                <li>
+                                    <a rel="noopener noreferrer" href="#"><AiFillFacebook className="hover:bg-blue-700 "></AiFillFacebook></a>
+                                </li>
+                                <li>
+                                    <a rel="noopener noreferrer" href="#"><AiFillInstagram className="hover:bg-pink-600"></AiFillInstagram> </a>
+                                </li>
+                                <li>
+                                    <a rel="noopener noreferrer" href="#"><FaXTwitter className="text-black hover:bg-white"></FaXTwitter> </a>
                                 </li>
                             </ul>
                         </div>

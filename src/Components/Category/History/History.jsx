@@ -4,12 +4,12 @@ import ReactStars from "react-rating-stars-component";
 
 const History = () => {
     const books = useBooks()
-    // console.log(books);
+
 
     const historyBooks = books?.filter(
         book => book.category.toLowerCase() == ' history ')
     console.log(historyBooks);
-    // book.category.toLowerCase() == 'history'
+
     return (
         <div>
             <div className='grid md:grid-cols-2 gap-10 mx-auto w-9/12 '>
@@ -32,7 +32,7 @@ const History = () => {
                                     activeColor="#ffd700"
                                 /></div>
 
-                                <Link>
+                                <Link to={`/detailbook/${book._id}`}>
                                     <button className="bg-btn-bg rounded-md text-white px-5 py-3">Details button
                                     </button>
                                 </Link>
